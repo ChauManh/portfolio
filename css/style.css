@@ -368,22 +368,29 @@ h3 {
   border-radius: 5px;
 }
 .project-container {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cột */
   gap: 20px;
-  flex-wrap: wrap;
 }
+
+@media only screen and (max-width: 768px) {
+  .project-container {
+    grid-template-columns: 1fr; /* 1 cột trên mobile */
+  }
+}
+
 .project-box {
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-direction: column;
-  width: 30%;
-  height: 250px;
+  /* width: 45%; */
+  height: auto;
+  padding: 20px;
   background: var(--color-white);
   border-radius: 20px;
+  gap: 4px;
   box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
   overflow: hidden;
 }
@@ -391,18 +398,29 @@ h3 {
 .project-box > i {
   font-size: 50px;
   color: #00b5e7;
-  margin-bottom: 25px;
+}
+
+.project-box > h3 {
+  margin-bottom: 8;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color-second);
+}
+
+.project-box > p {
+  color: var(--text-color-second);
 }
 
 .project-btn {
   background: none;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   padding: 10px 20px;
   cursor: pointer;
   position: relative;
   z-index: 1;
   transition: all 0.3s ease;
   border-radius: 8px;
+  border-color: var(--second-color);
 }
 
 .project-link {
@@ -416,13 +434,12 @@ h3 {
 
 .project-label {
   font-size: 15px;
-  color: #777;
+  color: var(--second-color);
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 2px 4px;
 }
 
-.project-box::after,
 .contact-info::after {
   content: "";
   position: absolute;
@@ -437,19 +454,6 @@ h3 {
 .project-box:hover.project-box::after,
 .contact-info:hover.contact-info::after {
   bottom: 0;
-}
-
-.project-box:hover .project-btn,
-.project-box:hover .project-link,
-.project-box:hover .project-label {
-  color: var(--color-white);
-  z-index: 2;
-}
-
-.project-box:hover.project-box i,
-.project-box:hover.project-box > h3 {
-  color: var(--color-white);
-  z-index: 2;
 }
 
 .project-btn:hover {
@@ -576,10 +580,6 @@ footer {
   font-weight: 600;
   color: var(--text-color-second);
 }
-
-/* .middle-footer .footer-menu {
-  display: flex;
-} */
 
 .footer_menu_list {
   list-style: none;

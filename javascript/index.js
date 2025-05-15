@@ -22,7 +22,7 @@ function headerShadow() {
   }
 }
 var typingEffect = new Typed(".typedText", {
-  strings: ["Backend Developer", "Web Developer"],
+  strings: ["Backend Developer"],
   loop: true,
   typeSpeed: 100,
   backSpeed: 80,
@@ -41,7 +41,10 @@ sr.reveal(".featured-text-btn", { delay: 70 });
 sr.reveal(".social_icons", { delay: 70 });
 sr.reveal(".featured-image", { delay: 120 });
 
-sr.reveal(".project-box", { interval: 70 });
+sr.reveal(".project-box", {
+  reset: true,
+  origin: "bottom",
+});
 sr.reveal(".top-header", {});
 
 const srLeft = ScrollReveal({
