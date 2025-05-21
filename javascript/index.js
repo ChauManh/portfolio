@@ -32,7 +32,7 @@ const sr = ScrollReveal({
   origin: "top",
   distance: "80px",
   duration: 2000,
-  reset: true,
+  reset: false,
 });
 sr.reveal(".featured-text-card", {});
 sr.reveal(".featured-name", { delay: 30 });
@@ -42,8 +42,9 @@ sr.reveal(".social_icons", { delay: 70 });
 sr.reveal(".featured-image", { delay: 120 });
 
 sr.reveal(".project-box", {
-  reset: true,
   origin: "bottom",
+  duration: 1000,
+  reset: true, 
 });
 sr.reveal(".top-header", {});
 
