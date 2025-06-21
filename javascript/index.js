@@ -44,7 +44,7 @@ sr.reveal(".featured-image", { delay: 120 });
 sr.reveal(".project-box", {
   origin: "bottom",
   duration: 1000,
-  reset: true, 
+  reset: false, 
 });
 sr.reveal(".top-header", {});
 
